@@ -10,6 +10,7 @@
 			$('#submit').click( function() {
 				$.post(location.href, $('#xmlForm').serialize(), function(data){
 					console.log(data);
+					$("#txtJson").html(JSON.stringify(data, null, 4))
 				})
 			});
 		});
@@ -23,7 +24,7 @@
 				<div class="form-group">
 					<label class="col-md-4 control-label" for="xml">Paste XML</label>
 					<div class="col-md-8">                     
-						<textarea class="form-control" id="textarea" name="xml"></textarea>
+						<textarea rows="10" class="form-control" id="txtXml" name="xml"></textarea>
 					</div>
 				</div>
 				<div class="form-group">
@@ -34,6 +35,14 @@
 				</div>
 			</fieldset>
 		</form>
+
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="result">Result</label>
+			<div class="col-md-8">                     
+				<textarea rows="10" class="form-control" id="txtJson" name="result"></textarea>
+			</div>
+		</div>
+
 	</div>
 </body>
 </html>
